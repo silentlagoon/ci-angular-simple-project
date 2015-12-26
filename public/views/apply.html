@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row custom-elements">
+        <div data-ng-if="response" class="alert col-xs-3 col-xs-offset-5" data-ng-class="{ 'alert-success' : response.success === true, 'alert-danger' : response.success === false }" role="alert">
+            <div>{{ response.text }}</div>
+            <ul>
+                <li data-ng-repeat="element in response.application"> {{ element }}</li>
+            </ul>
+        </div>
+        <div data-ng-show="showForm">
+            <div class="form-group clearfix">
+                <div class="form-inline text-right col-xs-7">
+                    <label for="email" class="">Email</label>
+                    <input id="email" data-ng-model="user.email" type="email" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="form-inline text-right col-xs-7">
+                    <label for="char_name" class="">Character Name</label>
+                    <input id="char_name" data-ng-model="user.charName" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="form-inline text-right col-xs-7">
+                    <label for="serv_name" class="">Server Name</label>
+                    <input id="serv_name" data-ng-model="user.servName" type="text" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="form-inline text-right col-xs-7">
+                    <input type="button" data-ng-click="apply()" data-ng-disabled="applyDisabled" class="btn btn-success form-control custom-apply-button" value="Apply"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
